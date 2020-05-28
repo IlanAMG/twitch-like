@@ -8,7 +8,7 @@ export const TopStreams = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await api.get('https://api.twitch.tv/helix/streams')
+            const result = await api.get('https://api.twitch.tv/kraken/streams')
             let dataArray = result.data.data
             // console.log(result)
             
@@ -21,8 +21,8 @@ export const TopStreams = () => {
             })
 
             //création des URLs personnalisés
-            let baseUrlGames = 'https://api.twitch.tv/helix/games?' // Get Games sur Twitch dev // on met un ? car il y aura des id 
-            let baseUrlUsers = 'https://api.twitch.tv/helix/users?' // Get Users sur Twitch dev // idem pour les users
+            let baseUrlGames = 'https://api.twitch.tv/kraken/games?' // Get Games sur Twitch dev // on met un ? car il y aura des id 
+            let baseUrlUsers = 'https://api.twitch.tv/kraken/users?' // Get Users sur Twitch dev // idem pour les users
 
             // cela va contenir tout les id qu'on va rajouter à nos urls
             let queryParamsGames = ''

@@ -13,7 +13,7 @@ export const GameStreams = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await api.get(`https://api.twitch.tv/helix/streams?game_id=${location.state.gameID}`)
+            const result = await api.get(`https://api.twitch.tv/kraken/streams?game_id=${location.state.gameID}`)
         
             let dataArray = result.data.data
         
@@ -33,7 +33,7 @@ export const GameStreams = () => {
                 return stream.user_id
             })
 
-            let baseUrl = 'https://api.twitch.tv/helix/users?' 
+            let baseUrl = 'https://api.twitch.tv/kraken/users?' 
             let queryParamsUsers = ''
 
             userIDs.map(id => {

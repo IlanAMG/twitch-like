@@ -12,7 +12,7 @@ export const Live = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await api.get(`https://api.twitch.tv/helix/streams?user_login=${slug}`)
+            const result = await api.get(`https://api.twitch.tv/kraken/streams?user_login=${slug}`)
             // console.log(result)
 
             if (result.data.data.length === 0 ) {
@@ -22,7 +22,7 @@ export const Live = () => {
                 let gameID = result.data.data.map(gameid => {
                     return gameid.game_id
                 })
-                const resultNomGame = await api.get(`https://api.twitch.tv/helix/games?id=${gameID}`)
+                const resultNomGame = await api.get(`https://api.twitch.tv/kraken/games?id=${gameID}`)
                 // console.log(resultNomGame)
                 let nomJeu = resultNomGame.data.data.map(gameName => {
                     return gameName.name

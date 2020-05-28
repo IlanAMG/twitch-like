@@ -9,8 +9,8 @@ export const Games = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await api.get('https://api.twitch.tv/helix/games/top')
-
+            const result = await api.get('https://api.twitch.tv/kraken/games/top')
+            console.log(result)
             let dataArray = result.data.data
             let finalArray = dataArray.map(game => {
                 let newUrl = game.box_art_url
@@ -27,7 +27,7 @@ export const Games = () => {
 
     return (
         <div>
-            <h1 className="titreGames">Jeux les plus populaires</h1>
+            <h1 className="titreGames">Les streams ne sont plus disponible pour le moment car l'API de Twitch a reçu une nouvelle mise à jour. Je règle le problème le plus vite possible.</h1>
             <div className="flexAccueil">
                 {games.map((game, index) => (
                     <div key={index} className="carteGames">

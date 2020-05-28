@@ -14,7 +14,7 @@ export const Resultats = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await api.get(`https://api.twitch.tv/helix/users?login=${cleanSearch}`)
+            const result = await api.get(`https://api.twitch.tv/kraken/users?login=${cleanSearch}`)
             console.log(result)
             if (result.data.data.length === 0) {
                 setResult(false)
